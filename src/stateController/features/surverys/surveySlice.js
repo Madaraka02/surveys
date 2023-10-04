@@ -20,8 +20,10 @@ const surveySlice = createSlice({
             state.surveys = action.payload
         },
         setResponse:(state, action) => {
-            state.answers = action.payload
-
+        
+            state.answers = state.answers.concat(action.payload)
+            
+            console.log('state',state.answers)
         },
         setCurrentActive:(state, action) => {
             state.currentlyActive = action.payload

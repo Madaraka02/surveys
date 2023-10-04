@@ -67,14 +67,16 @@ const Surveys = () => {
       }
       const handleFinishSurvey = () => {
         dispatch(setResponse(answers))
+        alert('Survey submitted successfully')
       }
   return (
     <div className='container mx-auto w-full flex flex-col gap-4 py-20'>
         <p className='font-bold'>Survey questions</p>
+        {surveys?.questions?.length > 0 &&
         <div className="">
 
         <button onClick={() => handleSetCurrentActive(surveys?.questions[0].id)} className='bg-gray-200 text-center py-1 rounded-md px-3'>Respond</button>
-        </div>
+        </div>}
 
         {surveys?.questions?.map((survey, index) => (
                 <div key={index} className='p-4 w-full border rounded-md capitalize flex flex-col gap-1'>
@@ -90,7 +92,7 @@ const Surveys = () => {
                         {survey?.answer_type === 'SINGLE_LINE_TEXT' && survey?.options.length > 0 ?
                         survey?.options?.map((option, index) => (
                             <div key={index} className="flex flex-row items-center gap-1">
-                                <input type="checkbox" value={option?.value} className='ro'/>
+                                <input type="checkbox" value={option?.value} onChange={(e) => setAnswer(e.target.value)}  className='ro'/>
                                 <p> {extractDisplay(option?.display_text)}</p>
                             </div>
                         ))
@@ -101,7 +103,7 @@ const Surveys = () => {
                         <input type="number" onChange={(e) => setAnswer(e.target.value)} className='w-full rounded-md outline-none border px-2 py-2' />
                         :null}
                         <div className="">
-        
+                            
                         <button onClick={() =>{
                             handleRespond(survey?.id, survey?.question_text, answer)
                             handleSetCurrentActive(surveys?.questions[index+1]?.id)
@@ -115,7 +117,7 @@ const Surveys = () => {
                 }
             </div>
         ))}
-        {answers.length === surveys?.questions.length && 
+        {answers?.length === surveys?.questions?.length && 
         <div className="">
 
             <button className='bg-gray-200 text-center px-3 py-1 rounded-md' onClick={handleFinishSurvey}>Finish</button>
