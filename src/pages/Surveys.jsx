@@ -70,7 +70,7 @@ const Surveys = () => {
         alert('Survey submitted successfully')
       }
   return (
-    <div className='container mx-auto w-full flex flex-col gap-4 py-20'>
+    <div className='container mx-auto w-full flex flex-col gap-4 px-2 py-20'>
         <p className='font-bold'>Survey questions</p>
         {surveys?.questions?.length > 0 &&
         <div className="">

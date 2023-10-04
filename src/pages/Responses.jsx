@@ -9,7 +9,7 @@ const Responses = () => {
   return (
     <>
     <Header/>
-    <div className='flex flex-col w-full '>
+    <div className='flex flex-col w-full px-2'>
         <div className="container mx-auto py-20 w-full flex flex-col gap-2">
             {answers?.map((answer)=> (
                 <div className="flex flex-col border rounded-md p-3 gap-1">
