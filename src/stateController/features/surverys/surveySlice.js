@@ -23,7 +23,6 @@ const surveySlice = createSlice({
         
             state.answers = state.answers.concat(action.payload)
             
-            console.log('state',state.answers)
         },
         setCurrentActive:(state, action) => {
             state.currentlyActive = action.payload
