@@ -5,7 +5,6 @@ import { extracData, extractData } from '../utils'
 
 const Responses = () => {
     const answers = useSelector((state) => state.survey.answers)
-    console.log('answers',answers)
     
   return (
     <>
