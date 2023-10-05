@@ -1,13 +1,13 @@
 import React from 'react'
 import Header from '../components/Header'
-import Surveys from './Surveys'
+import RedoneSurveys from './RedoneSurveys'
 
 const Home = () => {
   return (
     <>
     <Header/>
-    <Surveys/>
-    </>
+    <RedoneSurveys/>
+        </>
   )
 }
 
